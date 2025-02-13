@@ -1,17 +1,18 @@
 # AgileRailsHtmlEditor
 
-Default HTML editor and file manager plugin for AgileRails. Since AgileRails doesn't come with HTML data entry field, 
-AgileRailsHtmlEditor gem adds html_field and file_select data entry fields to AgileRails forms.
+AgileRailsHtmlEditor consists of CKEditor html edit component and ElFinder file manager component.
 
-AgileRailsHtmlEditor consists of CKEditor html edit component and EL Finder file manager component.
+Since AgileRails gem doesn't come with data entry field for editing HTML data, agile_rails_html_editor 
+gem adds html_field and file_select data entry fields to AgileRails forms.
 
 Configuration
 ----------------
 
 Add this line to your Gemfile:
 ```ruby
-  gem 'agile_rails_html_editor'
+  gem 'agile_rails_html_editor', git: 'https://github.com/agile-rails/agile-rails-html-editor'
 ```  
+and run bundle update.
 
 Usage in Forms:
 ```yaml
@@ -25,21 +26,23 @@ Usage in Forms:
           height: 500
           width: 550
           toolbar: 'basic' 
-		
+
       20:
         name: picture
         type: file_select
         size: 50
 ```
 
-Optional configuration in Site document:
+Configuration for CK Editor can be set in site's record settings field.  
 ```yaml
 html_editor: ckeditor
 ckeditor:
- config_file: /files/my_ck_config.js
- css_file: /files/my_ck_css.css
+ config_file: /configs/my_ck_config.js
+ css_file: /configs/my_ck_css.css
 file_select: elfinder
 ```
+configs directory (in example) must be located in public directory. Since settings field is also defined on page 
+and design record, you can have different editor settings for every page or page design on the web site.   
 
 License
 -------
