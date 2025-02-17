@@ -5,7 +5,7 @@ require 'agile_rails_html_editor/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = 'agile-rails-html-editor'
+  s.name        = 'agile_rails_html_editor'
   s.version     = AgileRailsHtmlEditor::VERSION
   s.authors     = ['Damjan Rems']
   s.email       = ['damjan.rems@gmail.com']
